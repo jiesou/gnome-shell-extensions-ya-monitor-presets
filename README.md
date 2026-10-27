@@ -2,6 +2,11 @@
 
 Save monitor configurations as presets and switch between them quickly. Specially designed as a workaround for GNOME Remote Desktop RDP resolution issues. A preset stores which monitors are enabled, along with their resolution, refresh rate, and scale (DPI).
 
+
+<img width="471" alt="image" src="https://github.com/user-attachments/assets/04f9e06f-ee30-42c2-bb9d-e4ca726310b4" />
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/0ec24f14-9c68-4955-9632-009880f086e0" />
+
 Originally based on [cortex/monitor-presets](https://github.com/cortex/monitor-presets), with the following additions:
 
 - Panel and Quick Settings integration
