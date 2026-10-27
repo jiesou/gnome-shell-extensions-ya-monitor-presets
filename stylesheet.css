@@ -1,0 +1,13 @@
+/* stylesheet.css
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+.preset-text-box,
+.preset-button-box {
+    spacing: 2px;
+}
+
+.preset-description {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.5);
+}

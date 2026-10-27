@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.ya-monitor-presets"
+          path="/org/gnome/shell/extensions/ya-monitor-presets/">
+    <key name="presets" type="s">
+      <default>'[]'</default>
+    </key>
+    <key name="show-panel" type="b">
+      <default>true</default>
+      <summary>Show in Panel</summary>
+    </key>
+    <key name="show-quick-settings" type="b">
+      <default>true</default>
+      <summary>Show in Quick Settings</summary>
+    </key>
+    <key name="skip-display-change-confirm" type="b">
+      <default>false</default>
+      <summary>Skip the display change confirmation</summary>
+      <description>Keep display changes made by this extension immediately instead of asking whether to keep them.</description>
+    </key>
+    <key name="rdp-hook-enabled" type="b">
+      <default>false</default>
+      <summary>RDP connection</summary>
+      <description>Apply preset on RDP connection, and restore upon disconnection.</description>
+    </key>
+    <key name="rdp-preset-id" type="s">
+      <default>''</default>
+      <summary>Monitor preset for RDP</summary>
+    </key>
+    <key name="rdp-start-command" type="s">
+      <default>''</default>
+      <summary>Command when an RDP session starts</summary>
+    </key>
+    <key name="rdp-end-command" type="s">
+      <default>''</default>
+      <summary>Command when an RDP session ends</summary>
+    </key>
+    <key name="shortcut-next-preset" type="as">
+      <default>[]</default>
+      <summary>Next preset</summary>
+    </key>
+    <key name="shortcut-previous-preset" type="as">
+      <default>[]</default>
+      <summary>Previous preset</summary>
+    </key>
+    <key name="shortcut-preset-1" type="as">
+      <default>[]</default>
+    </key>
+    <key name="shortcut-preset-2" type="as">
+      <default>[]</default>
+    </key>
+    <key name="shortcut-preset-3" type="as">
+      <default>[]</default>
+    </key>
+    <key name="shortcut-preset-4" type="as">
+      <default>[]</default>
+    </key>
+    <key name="shortcut-preset-5" type="as">
+      <default>[]</default>
+    </key>
+    <key name="shortcut-preset-6" type="as">
+      <default>[]</default>
+    </key>
+    <key name="shortcut-preset-7" type="as">
+      <default>[]</default>
+    </key>
+    <key name="shortcut-preset-8" type="as">
+      <default>[]</default>
+    </key>
+    <key name="shortcut-preset-9" type="as">
+      <default>[]</default>
+    </key>
+  </schema>
+</schemalist>

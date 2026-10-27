@@ -1,0 +1,136 @@
+# Chinese translations for ya-monitor-presets.
+# Copyright (C) 2026 jiesou
+# This file is distributed under the same license as the ya-monitor-presets package.
+# jiesou <jiesou@github.io>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ya-monitor-presets\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 12:25+0800\n"
+"PO-Revision-Date: 2026-10-23 15:55+0800\n"
+"Last-Translator: jiesou <jiesou@github.io>\n"
+"Language-Team: Chinese (simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: extension.js:94 prefs.js:252
+msgid "Unknown configuration"
+msgstr "未知配置"
+
+#: extension.js:239 extension.js:249 extension.js:253
+msgid "Monitor Presets"
+msgstr "显示器预设"
+
+#: extension.js:367
+msgid "No presets yet"
+msgstr "还没有预设"
+
+#: extension.js:397
+msgid "Save current"
+msgstr "保存当前"
+
+#: extension.js:415
+msgid "Settings"
+msgstr "设置"
+
+#: extension.js:436
+msgid "New preset"
+msgstr "新预设"
+
+#: extension.js:442
+msgid "Saving monitor preset failed"
+msgstr "保存显示器预设失败"
+
+#: extension.js:490
+msgid "Applying monitor preset failed"
+msgstr "应用显示器预设失败"
+
+#: extension.js:688
+msgid "Running RDP command failed"
+msgstr "执行 RDP 命令失败"
+
+#: extension.js:751
+msgid "Restoring monitor configuration failed"
+msgstr "恢复显示器配置失败"
+
+#: prefs.js:44
+msgid "no shortcut"
+msgstr "无快捷键"
+
+#: prefs.js:65
+msgid "New accelerator…"
+msgstr "新快捷键…"
+
+#: prefs.js:66
+msgid "Press the new shortcut, or Backspace to clear it"
+msgstr "按下新的快捷键，按退格键清除"
+
+#: prefs.js:138
+msgid "General"
+msgstr "通用"
+
+#: prefs.js:142
+msgid "Skip the display change confirmation"
+msgstr "跳过 Display Change 确认"
+
+#: prefs.js:143
+msgid ""
+"Keep display changes made by this extension immediately instead of asking "
+"whether to keep them."
+msgstr "立即保留显示设置变更，不再询问是否保留。"
+
+#: prefs.js:149
+msgid "Show in Panel"
+msgstr "显示在顶栏"
+
+#: prefs.js:155
+msgid "Show in Quick Settings"
+msgstr "显示在快速设置"
+
+#: prefs.js:165
+msgid "Hooks"
+msgstr "Hooks"
+
+#: prefs.js:169
+msgid "RDP connection"
+msgstr "RDP 连接"
+
+#: prefs.js:170
+msgid "Apply preset on RDP connection, and restore upon disconnection."
+msgstr "RDP 连接时应用预设，断开连接后恢复。"
+
+#: prefs.js:176
+msgid "Monitor preset for RDP"
+msgstr "RDP 显示器预设"
+
+#: prefs.js:181
+msgid "Command when an RDP session starts"
+msgstr "RDP 会话开始时执行 Shell 命令"
+
+#: prefs.js:188
+msgid "Command when an RDP session ends"
+msgstr "RDP 会话结束时执行 Shell 命令"
+
+#: prefs.js:203 prefs.js:259
+msgid "no preset"
+msgstr "无预设"
+
+#: prefs.js:235
+msgid "Shortcuts"
+msgstr "快捷键"
+
+#: prefs.js:237
+msgid "Previous preset"
+msgstr "上一个预设"
+
+#: prefs.js:238
+msgid "Next preset"
+msgstr "下一个预设"
+
+#: prefs.js:257
+#, javascript-format
+msgid "Preset %d (%s)"
+msgstr "第 %d 个预设（%s）"

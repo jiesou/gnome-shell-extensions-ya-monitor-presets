@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 12:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: extension.js:94 prefs.js:252
+msgid "Unknown configuration"
+msgstr ""
+
+#: extension.js:239 extension.js:249 extension.js:253
+msgid "Monitor Presets"
+msgstr ""
+
+#: extension.js:367
+msgid "No presets yet"
+msgstr ""
+
+#: extension.js:397
+msgid "Save current"
+msgstr ""
+
+#: extension.js:415
+msgid "Settings"
+msgstr ""
+
+#: extension.js:436
+msgid "New preset"
+msgstr ""
+
+#: extension.js:442
+msgid "Saving monitor preset failed"
+msgstr ""
+
+#: extension.js:490
+msgid "Applying monitor preset failed"
+msgstr ""
+
+#: extension.js:688
+msgid "Running RDP command failed"
+msgstr ""
+
+#: extension.js:751
+msgid "Restoring monitor configuration failed"
+msgstr ""
+
+#: prefs.js:44
+msgid "no shortcut"
+msgstr ""
+
+#: prefs.js:65
+msgid "New accelerator…"
+msgstr ""
+
+#: prefs.js:66
+msgid "Press the new shortcut, or Backspace to clear it"
+msgstr ""
+
+#: prefs.js:138
+msgid "General"
+msgstr ""
+
+#: prefs.js:142
+msgid "Skip the display change confirmation"
+msgstr ""
+
+#: prefs.js:143
+msgid ""
+"Keep display changes made by this extension immediately instead of asking "
+"whether to keep them."
+msgstr ""
+
+#: prefs.js:149
+msgid "Show in Panel"
+msgstr ""
+
+#: prefs.js:155
+msgid "Show in Quick Settings"
+msgstr ""
+
+#: prefs.js:165
+msgid "Hooks"
+msgstr ""
+
+#: prefs.js:169
+msgid "RDP connection"
+msgstr ""
+
+#: prefs.js:170
+msgid "Apply preset on RDP connection, and restore upon disconnection."
+msgstr ""
+
+#: prefs.js:176
+msgid "Monitor preset for RDP"
+msgstr ""
+
+#: prefs.js:181
+msgid "Command when an RDP session starts"
+msgstr ""
+
+#: prefs.js:188
+msgid "Command when an RDP session ends"
+msgstr ""
+
+#: prefs.js:203 prefs.js:259
+msgid "no preset"
+msgstr ""
+
+#: prefs.js:235
+msgid "Shortcuts"
+msgstr ""
+
+#: prefs.js:237
+msgid "Previous preset"
+msgstr ""
+
+#: prefs.js:238
+msgid "Next preset"
+msgstr ""
+
+#: prefs.js:257
+#, javascript-format
+msgid "Preset %d (%s)"
+msgstr ""

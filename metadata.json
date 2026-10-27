@@ -1,0 +1,21 @@
+{
+  "name": "Yet Another Monitor Presets",
+  "description": "Save monitor presets and switch them automatically upon RDP client connection, with enabled monitors, resolution, dpi",
+  "uuid": "ya-monitor-presets@jiesou.github.io",
+  "gettext-domain": "ya-monitor-presets@jiesou.github.io",
+  "url": "https://github.com/jiesou/gnome-shell-extensions-ya-monitor-presets",
+  "settings-schema": "org.gnome.shell.extensions.ya-monitor-presets",
+  "session-modes": [
+    "user",
+    "unlock-dialog"
+  ],
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51"
+  ]
+}
