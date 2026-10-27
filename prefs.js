@@ -193,18 +193,30 @@ export default class YaMonitorPresetsPreferences extends ExtensionPreferences {
 
         let updating = false;
 
-        const updateModel = () => {
+        const syncSelected = () => {
             const presets = loadPresets(this._settings);
             const presetId = this._settings.get_string('rdp-preset-id');
             const selected = presets.findIndex(p => p.id === presetId);
+            const index = selected >= 0 ? selected + 1 : 0;
+
+            if (presetRow.selected === index)
+                return;
+
+            updating = true;
+            presetRow.selected = index;
+            updating = false;
+        };
+
+        const updateModel = () => {
+            const presets = loadPresets(this._settings);
 
             updating = true;
             presetRow.set_model(Gtk.StringList.new([
                 _('no preset'),
                 ...presets.map(p => p.label),
             ]));
-            presetRow.selected = selected >= 0 ? selected + 1 : 0;
             updating = false;
+            syncSelected();
 
             const enabled = this._settings.get_boolean('rdp-hook-enabled');
             presetRow.sensitive = enabled && presets.length > 0;
@@ -225,7 +237,7 @@ export default class YaMonitorPresetsPreferences extends ExtensionPreferences {
 
         updateModel();
         this._connect('changed::presets', updateModel);
-        this._connect('changed::rdp-preset-id', updateModel);
+        this._connect('changed::rdp-preset-id', syncSelected);
         this._connect('changed::rdp-hook-enabled', updateModel);
 
         return group;

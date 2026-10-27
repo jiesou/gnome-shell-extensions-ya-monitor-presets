@@ -1,6 +1,6 @@
 {
   "name": "Yet Another Monitor Presets",
-  "description": "Save monitor presets and switch them automatically upon RDP client connection, with enabled monitors, resolution, dpi",
+  "description": "Save monitor configurations as presets and switch between them quickly. Specially designed as a workaround for GNOME Remote Desktop RDP resolution issues. A preset stores which monitors are enabled, along with their resolution, refresh rate, and scale (DPI).",
   "uuid": "ya-monitor-presets@jiesou.github.io",
   "gettext-domain": "ya-monitor-presets@jiesou.github.io",
   "url": "https://github.com/jiesou/gnome-shell-extensions-ya-monitor-presets",
