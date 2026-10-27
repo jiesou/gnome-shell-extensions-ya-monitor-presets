@@ -2,8 +2,8 @@
 <schemalist>
   <schema id="org.gnome.shell.extensions.ya-monitor-presets"
           path="/org/gnome/shell/extensions/ya-monitor-presets/">
-    <key name="presets" type="s">
-      <default>'[]'</default>
+    <key name="presets" type="a(ssa(iiduba(ssa{sv})))">
+      <default>[]</default>
     </key>
     <key name="show-panel" type="b">
       <default>true</default>

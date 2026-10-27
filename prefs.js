@@ -25,7 +25,7 @@ import Gtk from 'gi://Gtk';
 
 import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
-import {formatPresetDetails, loadPresets, MAX_PRESET_SHORTCUTS} from './monitorConfig.js';
+import {formatPresetDetails, loadPresets, presetShortcutKeys} from './monitorConfig.js';
 
 // Same interaction as the shortcut rows in GNOME Control Center:
 // activate the row, press a key combination, Backspace clears it.
@@ -246,16 +246,16 @@ export default class YaMonitorPresetsPreferences extends ExtensionPreferences {
             rows.length = 0;
 
             const presets = loadPresets(this._settings);
-            for (let slot = 1; slot <= MAX_PRESET_SHORTCUTS; slot++) {
-                const preset = presets[slot - 1];
+            for (const [index, key] of presetShortcutKeys(this._settings).entries()) {
+                const preset = presets[index];
                 const details = preset
                     ? formatPresetDetails(preset.blob) || _('Unknown configuration')
                     : '';
                 const row = new ShortcutRow(
                     this._settings,
-                    `shortcut-preset-${slot}`,
+                    key,
                     _('Preset %d (%s)')
-                        .replace('%d', slot)
+                        .replace('%d', index + 1)
                         .replace('%s', preset ? preset.label : _('no preset')),
                     details,
                     !!preset

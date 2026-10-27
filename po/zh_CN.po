@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ya-monitor-presets\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-27 12:25+0800\n"
+"POT-Creation-Date: 2026-10-27 18:01+0800\n"
 "PO-Revision-Date: 2026-10-23 15:55+0800\n"
 "Last-Translator: jiesou <jiesou@github.io>\n"
 "Language-Team: Chinese (simplified)\n"
@@ -16,45 +16,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: extension.js:94 prefs.js:252
+#: extension.js:96 prefs.js:252
 msgid "Unknown configuration"
 msgstr "未知配置"
 
-#: extension.js:239 extension.js:249 extension.js:253
+#: extension.js:185 extension.js:196 extension.js:200
 msgid "Monitor Presets"
 msgstr "显示器预设"
 
-#: extension.js:367
+#: extension.js:253
 msgid "No presets yet"
 msgstr "还没有预设"
 
-#: extension.js:397
+#: extension.js:284
 msgid "Save current"
 msgstr "保存当前"
 
-#: extension.js:415
+#: extension.js:293
 msgid "Settings"
 msgstr "设置"
 
-#: extension.js:436
+#: extension.js:312
 msgid "New preset"
 msgstr "新预设"
 
-#: extension.js:442
+#: extension.js:319
 msgid "Saving monitor preset failed"
 msgstr "保存显示器预设失败"
-
-#: extension.js:490
-msgid "Applying monitor preset failed"
-msgstr "应用显示器预设失败"
-
-#: extension.js:688
-msgid "Running RDP command failed"
-msgstr "执行 RDP 命令失败"
-
-#: extension.js:751
-msgid "Restoring monitor configuration failed"
-msgstr "恢复显示器配置失败"
 
 #: prefs.js:44
 msgid "no shortcut"
@@ -134,3 +122,11 @@ msgstr "下一个预设"
 #, javascript-format
 msgid "Preset %d (%s)"
 msgstr "第 %d 个预设（%s）"
+
+#: presetApplier.js:74
+msgid "Applying monitor preset failed"
+msgstr "应用显示器预设失败"
+
+#: rdpHook.js:166
+msgid "Running RDP command failed"
+msgstr "执行 RDP 命令失败"

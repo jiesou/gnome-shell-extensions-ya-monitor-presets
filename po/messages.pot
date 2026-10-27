@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-27 12:25+0800\n"
+"POT-Creation-Date: 2026-10-27 18:01+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,44 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: extension.js:94 prefs.js:252
+#: extension.js:96 prefs.js:252
 msgid "Unknown configuration"
 msgstr ""
 
-#: extension.js:239 extension.js:249 extension.js:253
+#: extension.js:185 extension.js:196 extension.js:200
 msgid "Monitor Presets"
 msgstr ""
 
-#: extension.js:367
+#: extension.js:253
 msgid "No presets yet"
 msgstr ""
 
-#: extension.js:397
+#: extension.js:284
 msgid "Save current"
 msgstr ""
 
-#: extension.js:415
+#: extension.js:293
 msgid "Settings"
 msgstr ""
 
-#: extension.js:436
+#: extension.js:312
 msgid "New preset"
 msgstr ""
 
-#: extension.js:442
+#: extension.js:319
 msgid "Saving monitor preset failed"
-msgstr ""
-
-#: extension.js:490
-msgid "Applying monitor preset failed"
-msgstr ""
-
-#: extension.js:688
-msgid "Running RDP command failed"
-msgstr ""
-
-#: extension.js:751
-msgid "Restoring monitor configuration failed"
 msgstr ""
 
 #: prefs.js:44
@@ -134,4 +122,12 @@ msgstr ""
 #: prefs.js:257
 #, javascript-format
 msgid "Preset %d (%s)"
+msgstr ""
+
+#: presetApplier.js:74
+msgid "Applying monitor preset failed"
+msgstr ""
+
+#: rdpHook.js:166
+msgid "Running RDP command failed"
 msgstr ""

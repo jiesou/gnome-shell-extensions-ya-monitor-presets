@@ -23,6 +23,10 @@ import GLib from 'gi://GLib';
 const DISPLAY_CONFIG_BUS_NAME = 'org.gnome.Mutter.DisplayConfig';
 const DISPLAY_CONFIG_OBJECT_PATH = '/org/gnome/Mutter/DisplayConfig';
 
+const LOGICAL_MONITORS_TYPE = 'a(iiduba(ssa{sv}))';
+const APPLY_TYPE = `(uu${LOGICAL_MONITORS_TYPE}a{sv})`;
+const PRESETS_TYPE = `a(ss${LOGICAL_MONITORS_TYPE})`;
+
 Gio._promisify(Gio.DBusConnection.prototype, 'call', 'call_finish');
 
 function callDisplayConfig(method, parameters = null) {
@@ -68,62 +72,48 @@ export async function getDisplayState() {
     }
 
     return logicalMonitors.map(logicalMonitor => {
-        const [x, y, scale, transform, isPrimary, connectedMonitors, properties] = logicalMonitor;
+        const [x, y, scale, transform, isPrimary, connectedMonitors] = logicalMonitor;
         const monitorsForApply = connectedMonitors.map(([connector]) => [
             connector,
             activeModes.get(connector) ?? 'preferred',
             {},
         ]);
-        return [x, y, scale, transform, isPrimary, monitorsForApply, properties ?? {}];
+        return [x, y, scale, transform, isPrimary, monitorsForApply];
     });
 }
 
-export async function applyMonitorConfig(logicalMonitors, properties = {}) {
+export async function applyMonitorConfig(logicalMonitors) {
     const [serial] = (await callDisplayConfig('GetCurrentState')).recursiveUnpack();
-    const params = new GLib.Variant('(uua(iiduba(ssa{sv}))a{sv})', [
-        serial,
-        2,
-        logicalMonitors,
-        properties,
-    ]);
+    const params = new GLib.Variant(APPLY_TYPE, [serial, 2, logicalMonitors, {}]);
 
     await callDisplayConfig('ApplyMonitorsConfig', params);
 }
 
-export const MAX_PRESET_SHORTCUTS = 9;
-
-export function loadPresets(settings) {
-    try {
-        const presets = JSON.parse(settings.get_string('presets'));
-        if (!Array.isArray(presets))
-            return [];
-
-        return presets.filter(preset =>
-            preset &&
-            typeof preset.id === 'string' &&
-            typeof preset.label === 'string' &&
-            Array.isArray(preset.blob)
-        );
-    } catch (e) {
-        logError(e, 'Failed to parse monitor presets');
-        return [];
-    }
+export function presetShortcutKeys(settings) {
+    const prefix = 'shortcut-preset-';
+    return settings.list_keys()
+        .filter(key => key.startsWith(prefix))
+        .sort((a, b) => Number(a.slice(prefix.length)) - Number(b.slice(prefix.length)));
 }
 
-export function savePresets(settings, presets) {
-    settings.set_string('presets', JSON.stringify(presets));
+export function loadPresets(settings) {
+    return settings.get_value('presets').recursiveUnpack()
+        .map(([id, label, blob]) => ({id, label, blob}));
+}
+
+export function updatePresets(settings, update) {
+    const presets = update(loadPresets(settings));
+    settings.set_value(
+        'presets',
+        new GLib.Variant(PRESETS_TYPE, presets.map(({id, label, blob}) => [id, label, blob]))
+    );
 }
 
 export function formatPresetDetails(blob) {
-    if (!Array.isArray(blob))
-        return '';
-
     return blob.map(logicalMonitor => {
-        const scale = logicalMonitor?.[2];
-        const monitors = logicalMonitor?.[5];
-        const monitorLabels = Array.isArray(monitors)
-            ? monitors.map(([connector, modeId]) => `${connector} ${modeId}`)
-            : [];
+        const scale = logicalMonitor[2];
+        const monitorLabels = logicalMonitor[5]
+            .map(([connector, modeId]) => `${connector} ${modeId}`);
 
         let label = monitorLabels.join(' + ');
         if (typeof scale === 'number' && scale !== 1)
