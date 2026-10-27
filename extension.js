@@ -198,7 +198,8 @@ export default class YaMonitorPresetsExtension extends Extension {
             toggleMode: false,
         });
         this._qsToggle.menu.setHeader('preferences-desktop-display-symbolic', _('Monitor Presets'));
-        this._qsToggle.connect('clicked', () => this._qsToggle.menu.toggle());
+        this._qsToggle.connectObject(
+            'clicked', () => this._qsToggle.menu.toggle(), this);
         this._qsIndicator.quickSettingsItems.push(this._qsToggle);
         Main.panel.statusArea.quickSettings.addExternalIndicator(this._qsIndicator);
         this._settings.bind(
@@ -218,11 +219,14 @@ export default class YaMonitorPresetsExtension extends Extension {
     }
 
     disable() {
+        // unlock-dialog is required for the RDP hook: locking would
+        // otherwise drop a session already running, which cannot be re-found.
         this._settings.disconnectObject(this);
         this._applier.stop();
         this._rdp.stop();
 
         Main.sessionMode.disconnectObject(this);
+        this._qsToggle.disconnectObject(this);
         for (const menu of this._menus ?? [])
             menu.disconnectObject(this);
         this._removeKeybindings();
@@ -237,7 +241,9 @@ export default class YaMonitorPresetsExtension extends Extension {
         this._newPresetId = null;
         this._menus = this._settings = null;
         this._applier = this._rdp = null;
-        this._panelIndicator = this._qsToggle = this._qsIndicator = null;
+        this._panelIndicator = null;
+        this._qsToggle = null;
+        this._qsIndicator = null;
     }
 
     _rebuildMenus() {
