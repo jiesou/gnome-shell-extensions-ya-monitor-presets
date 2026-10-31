@@ -120,6 +120,7 @@ export default class YaMonitorPresetsPreferences extends ExtensionPreferences {
             for (const id of this._signalIds)
                 this._settings.disconnect(id);
             this._signalIds = [];
+            this._settings = null;
 
             return false;
         });
