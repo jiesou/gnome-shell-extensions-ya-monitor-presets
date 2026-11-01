@@ -219,8 +219,7 @@ export default class YaMonitorPresetsExtension extends Extension {
     }
 
     disable() {
-        // unlock-dialog is required for the RDP hook: locking would
-        // otherwise drop a session already running, which cannot be re-found.
+        // unlock-dialog is required for "RDP Hooks" when an RDP client connects to the lock screen.
         this._settings.disconnectObject(this);
         this._applier.stop();
         this._rdp.stop();
